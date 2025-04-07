@@ -1,0 +1,14 @@
+.sidebar-wrapper hr {
+  margin: 0;
+}
+.sidebar-wrapper .sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  height: auto;
+}
+.sidebar-wrapper .sidebar-footer {
+  padding: 5px 15px;
+  min-height: 49px;
+}/*# sourceMappingURL=sidebar.styles.css.map */

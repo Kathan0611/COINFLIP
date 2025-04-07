@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "http-14-194-129-238-9000",
+        "projectKey": "admin-api"
+    }
+}

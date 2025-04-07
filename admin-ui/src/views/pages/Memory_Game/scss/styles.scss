@@ -1,0 +1,49 @@
+/* 1) The row container becomes a grid */
+.image-cards-row {
+    margin: 0 !important; /* Remove default row negative margins if needed */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1rem;
+  }
+  
+  /* 2) Each individual image card */
+  .image-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* 3) The image upload container as a responsive square */
+  .image-upload-container {
+    border-width: 1px;
+    border-color: var(--cui-border-color);
+    border-style: solid;
+    border-radius: var(--cui-border-radius);
+    aspect-ratio: 1 / 1; /* Ensures square */
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintains a square shape */
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* When there is an error, change border color to red */
+  .image-upload-error {
+    border-color: red !important;
+  }
+  
+  .image-upload-container label {
+    margin-bottom: 5px; /* Adjust spacing between image and label */
+  }
+  
+  /* Zero out any default padding/margins if needed */
+  .image-upload-container > * {
+    padding: 0 !important;
+    margin: 0 !important;
+  }

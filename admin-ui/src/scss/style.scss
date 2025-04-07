@@ -1,0 +1,219 @@
+//scss/style.scss
+// If you want to override variables do it here
+@import 'variables';
+
+// Import styles
+@import '@coreui/coreui/scss/coreui';
+@import '@coreui/chartjs/scss/coreui-chartjs';
+
+// Vendors
+@import 'vendors/simplebar';
+
+// Custom styles for this themef
+@import 'theme';
+
+// If you want to add custom CSS you can put it here
+@import 'custom';
+
+body {
+  > iframe {
+    display: none;
+  }
+}
+
+.without-table-action {
+  tbody {
+    tr {
+      td {
+        padding: 0.3rem !important;
+      }
+    }
+  }
+}
+
+.action-button {
+  &.btn {
+    padding: 1px 6px 1px 6px !important;
+  }
+}
+
+.add-action-button {
+  &.btn {
+    padding: 3px 8px 3px 8px !important;
+  }
+}
+
+.modal-close-button {
+  button.close {
+    color: white;
+
+    &:focus {
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.custom-bottom-boder {
+  padding: var(--cui-card-cap-padding-y) var(--cui-card-cap-padding-x);
+  margin-bottom: 10px !important;
+  padding-left: 0px;
+  // color: var(--cui-card-cap-color);
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #636f83;
+  border-color: #636f83;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #3c4b64;
+}
+
+.table-header-text-mrg {
+  margin-right: 6px;
+}
+
+.svg-inline--fa {
+  height: 0.8em !important;
+}
+
+.page-item.active .page-link {
+  background-color: var(--cui-pagination-color);
+  border-color: var(--cui-pagination-color);
+}
+
+.form-check-inline .form-check-input {
+  margin-top: revert !important;
+}
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-dropdown {
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  padding-top: 45px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content1 {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+
+}
+.selected-media {
+  box-shadow: 0px 0px 5px 5px rgba(1, 115, 170, 0.5); 
+  border: 2px solid #0173aa;
+  background-color: rgba(1, 115, 170, 0.1);
+}
+img.mediaLibrary {
+  float: left;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-popup {
+  overflow-y: scroll;
+  max-height: 380px;
+}
+.deletepopup {
+  z-index: 1000000000 !important;
+}
+
+.deletepopup-container .modal-backdrop.show {
+  z-index: 999999999 !important;
+}
+
+img.mediaLibraryPreview {
+  float: left;
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.custom-status-switch {
+  margin-left: 10px;
+}
+
+.Toastify__toast-container {
+  z-index: 2000;
+}
+
+.Toastify__toast {
+  z-index: 2001;
+}
+
+.custom-width {
+  width: 24% !important;
+}

@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "d4aad493-5abc-49ef-b828-1cbbd66ad41f",
+		"name": "Memory Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29438009"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "Get Game Config",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{jwt}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "http://localhost:3000/admin/games/memory-game/config"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Signin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/admin/auth/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "Set Game Config",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{jwt}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "game_time",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "total_cards",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "daily_limit",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "rewards",
+									"value": "{\"grandmaster\":\"50% Discount\", \"expert\":\"25% Discount\", \"skilled\":\"15% Discount\", \"beginner\":\"10% Discount\", \"novice\":\"5% Discount\", \"better_luck_next_time\":\"Better Luck Next Time\"}",
+									"type": "text"
+								},
+								{
+									"key": "game_theme",
+									"value": "{\"button_background_color\":\"#456789\", \"button_text_color\":\"#123456\", \"text_color\":\"#ffffff\"}",
+									"type": "text"
+								},
+								{
+									"key": "isBackgroundImageRemoved",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "background_image",
+									"type": "file",
+									"src": "postman-cloud:///1f00303e-eb2b-4600-8fae-5d2a5e6edbc0"
+								},
+								{
+									"key": "card_cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1f003040-61c3-45f0-96cb-ce690930f5ed"
+								},
+								{
+									"key": "card_front_images",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1f003042-be11-4850-af1f-f3e19f8a2700",
+										"postman-cloud:///1f003042-bddb-4cf0-8247-2ad8cc8c528e",
+										"postman-cloud:///1f003042-c08e-4ba0-9b34-816f3973a9d4"
+									]
+								}
+							]
+						},
+						"url": "http://localhost:3000/admin/games/memory-game/config"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Logs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{jwt}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"mobile\": \"\",\r\n    \"page_no\": \"1\",\r\n    \"sort_dir\": \"\",\r\n    \"sort_field\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/admin/games/memory-game/user-logs"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{jwt}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/admin/games/memory-game/user-logs/903"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Get Initial Config",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/games/memory-game/config"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reward",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"time_taken\":17,\r\n    \"moves_taken\":8,\r\n    \"pairs_matched\":3,\r\n    \"name\":\"Jay\",\r\n    \"mobile\":\"9428947970\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/games/memory-game/reward"
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Jay\",\r\n    \"mobile\":\"6969696969\",\r\n    \"isAuthenticated\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/games/memory-game/send-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Jay\",\r\n    \"mobile\":\"6969696969\",\r\n    \"otp\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/games/memory-game/verify-otp"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

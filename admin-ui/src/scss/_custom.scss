@@ -1,0 +1,77 @@
+// _custom.scss
+
+// Here you can add other styles
+.pl-1 {
+  padding-left: 0.5rem;
+}
+
+.float-right {
+  float: right;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-danger,
+.btn:hover {
+  color: white;
+}
+.custom-hover-button:hover {
+  color: var(--cui-btn-hover-color) !important; /* Hover color */
+}
+
+.admin-add,
+.admin-lists {
+  .form-switch-xl .form-check-input {
+    width: 3rem;
+  }
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+}
+
+.admin-lists {
+  .form-control {
+    line-height: 17px;
+  }
+  .react-select__control {
+    min-height: 31.2px !important;
+    height: 31.2px !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+.react-select__control {
+  border: var(--cui-border-width) solid var(--cui-border-color) !important;
+  border-radius: var(--cui-border-radius) !important;
+}
+
+.react-select__option--is-selected,
+.react-select__option--is-focused {
+  background-color: #c9c8f8 !important;
+  color: black !important;
+}
+.select-focus {
+  color: var(--cui-body-color) !important;
+  background-color: var(--cui-body-bg) !important;
+  border-color: #acabeb !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0.25rem rgba(88, 86, 214, 0.25) !important;
+}
+.page-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ml-07 {
+  margin-left: 0.7rem !important;
+}
+
+input[type='file'] {
+  color: transparent; // Hide the default text
+}

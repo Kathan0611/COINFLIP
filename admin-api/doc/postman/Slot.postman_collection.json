@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "6b896c1c-74fa-41ce-8d2f-806b234e72f4",
+		"name": "Slot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33802507"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "signin",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\n//     \"email\": \"test@gmail.com\",\n//     \"password\": \"Test@123\"\n// }\n{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"Test@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3003/admin/auth/signin"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Game Config",
+					"item": [
+						{
+							"name": "config",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:3003/admin/games/slot-machine/config"
+							},
+							"response": []
+						},
+						{
+							"name": "config",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "slots",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "section",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "user_daily_limit",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "specific_combinations",
+											"value": "[\n  {\n    \"combination\": \"125\",\n    \"prizes\": [\n      {\n        \"name\": \"dvaaeeal Badge\",\n        \"prize_limit\": 4\n      }\n    ]\n  },\n  {\n    \"combination\": \"456\",\n    \"prizes\": [\n      {\n        \"name\": \"VIP Status\",\n        \"prize_limit\": 5\n      }\n    ]\n  }]",
+											"type": "text"
+										},
+										{
+											"key": "total_prize_limit",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1efe9eaa-ef0c-4b10-bac6-641c8026e235"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1efe9eac-55a1-4910-b1f4-248e6cae734f"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1efe9eac-a20e-4ff0-8e03-95eee426b6ee"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1efe9eac-f6ed-4120-89b6-71978e7543a3"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1efe9ead-51e5-4a50-b918-3250588afc20"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1efe9ead-a03b-45b0-a4c9-0964219bf124"
+										},
+										{
+											"key": "BackgroundImage",
+											"type": "file",
+											"src": "postman-cloud:///1f006341-5f57-4800-b277-4a9150fb2316"
+										},
+										{
+											"key": "theme_config",
+											"value": "[{\"gameTitle\": \"Super Slot\", \"titleColor\": \"#FF0000\", \"reelBorder\": \"2px solid #000\", \"buttonBackgroundColor\": \"#00FF00\", \"buttonTextColor\": \"#FFFFFF\"}]\n",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:3000/admin/games/slot-machine/config"
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": {
+							"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQzNDg2NDQwLCJleHAiOjE3NDM1NzI4NDB9.zPkg4SkZ2zCop1Lvfs2I9kC5yb0-WleARb5UP2O0O3s"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "User Loggs",
+					"item": [
+						{
+							"name": "delete loggs",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/admin/games/slot-machine/user-logs/545"
+							},
+							"response": []
+						},
+						{
+							"name": "userloggs",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"\",\n  \"mobile\": \"\",\n  \"page_no\": 1,\n  \"sort_dir\": \"asc\",\n  \"sort_field\": \"createdAt\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/admin/games/slot-machine/user-logs"
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": {
+							"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQzNDg2NDQwLCJleHAiOjE3NDM1NzI4NDB9.zPkg4SkZ2zCop1Lvfs2I9kC5yb0-WleARb5UP2O0O3s"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQxMjM3NjEzLCJleHAiOjE3NDEzMjQwMTN9.wIhdfBOOrJowA7jHc4nTFNzBFvzlaGJVaRgowIjmJVA"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "spin",
+					"item": [
+						{
+							"name": "Spin Request (Authenticated / Unauthenticated)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"John Doe\",\n    \"user_number\": \"9426936630\",\n    \"isAuthenticated\": true\n}"
+								},
+								"url": "http://localhost:3003/api/slot/send-otp"
+							},
+							"response": []
+						},
+						{
+							"name": "Verify OTP Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"John Doe\",\n    \"user_number\": \"9426936630\",\n    \"otp\":\"123456\"\n}"
+								},
+								"url": "http://localhost:3000/api/games/slot-machine/verify-otp"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "audio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/audio/wheel-spin.mp3"
+					},
+					"response": []
+				},
+				{
+					"name": "config",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/games/slot-machine/config"
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3003/api/games/slot-machine/info"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

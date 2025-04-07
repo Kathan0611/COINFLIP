@@ -1,0 +1,63 @@
+/* 1) The row container becomes a grid */
+.image-cards-row {
+  margin: 0 !important; /* Remove default row negative margins if needed */
+  display: grid;
+  /* Auto-fit means: create as many columns as will fit in the container,
+       each column at least 110px wide, and if there's extra space, they stretch. */
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  /* gap controls spacing between columns and rows */
+  gap: 1rem;
+}
+
+/* 2) Each individual image card */
+.image-card {
+  /* If you want a border on the outer card, do it here, or rely on .border from Bootstrap */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 3) The image upload container */
+.image-upload-container {
+  /* Thinner border */
+  border-width: 1px;
+  border-color: var(--cui-border-color);
+  border-style: solid;
+  border-radius: var(--cui-border-radius);
+
+  /* Keep your existing sizing and alignment */
+  height: 122px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    margin-bottom: 5px; // Adjust spacing between image and label
+  }
+
+  /* Zero out any default padding/margins if needed */
+  > * {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* New styles for background image upload container */
+// .background-upload-container {
+//   max-width: 220px;  /* Adjust width as needed */
+//   padding: 0.5rem;   /* Optional: adjust padding */
+// }
+
+/* Example in _custom.scss */
+.theme-config-container {
+  .row + .row {
+    margin-top: 1rem;
+  }
+}
+
